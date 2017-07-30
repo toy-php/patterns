@@ -6,7 +6,7 @@
 
 $order = new \Domain\Order();
 
-$stateSwitcher = new \Domain\StateSwitcher($order);
+$stateSwitcher = new \Domain\OrderStateSwitcher($order);
 
 // Берем на исполнение
 $stateSwitcher->hasAccepted();
