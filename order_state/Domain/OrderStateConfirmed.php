@@ -8,7 +8,7 @@ class OrderStateConfirmed extends OrderState
     /**
      * «Изменение заказа, требуется подтверждение» – возникла необходимость изменить условия заказа и согласовать их с Вами.
      */
-    public function isChanged()
+    public function hasChanged()
     {
         $this->order->setState(OrderStates::STATE_CHANGED);
     }
@@ -16,7 +16,7 @@ class OrderStateConfirmed extends OrderState
     /**
      * «Заказ доставляется» – машина с Вашим заказом выехала по указанному в заказе адресу.
      */
-    public function isDelivered()
+    public function hasDelivered()
     {
         $this->order->setState(OrderStates::STATE_DELIVERED);
     }
@@ -24,7 +24,7 @@ class OrderStateConfirmed extends OrderState
     /**
      * «Заказ отменен клиентом» – мы получили запрос от Вас и отменили заказ.
      */
-    public function isCanceledByClient()
+    public function hasCanceledByClient()
     {
         $this->order->setState(OrderStates::STATE_CANCELED_BY_CLIENT);
     }
@@ -32,7 +32,7 @@ class OrderStateConfirmed extends OrderState
     /**
      * «Заказ отменен по техническим причинам» – случилась серьезная техническая проблема.
      */
-    public function isCanceledByTechnicalReason()
+    public function hasCanceledByTechnicalReason()
     {
         $this->order->setState(OrderStates::STATE_CANCELED_BY_TECHNICAL_REASON);
     }

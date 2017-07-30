@@ -9,14 +9,14 @@ $order = new \Domain\Order();
 $stateSwitcher = new \Domain\StateSwitcher($order);
 
 // Берем на исполнение
-$stateSwitcher->isAccepted();
+$stateSwitcher->hasAccepted();
 
 // Клиент подтвердил намерение покупки
-$stateSwitcher->isConfirmed();
+$stateSwitcher->hasConfirmed();
 
 // В данный момент бросится исключение
 // т.к. заказ не прошел промежуточные состояния
-$stateSwitcher->isCompleted();
+$stateSwitcher->hasCompleted();
 
 ```
 

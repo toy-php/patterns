@@ -22,7 +22,7 @@ class StateSwitcher
      */
     public function isAccepted()
     {
-        $this->state->isAccepted();
+        $this->state->hasAccepted();
         $this->state = new OrderStateAccepted($this->order);
     }
 
@@ -31,7 +31,7 @@ class StateSwitcher
      */
     public function isConfirmed()
     {
-        $this->state->isConfirmed();
+        $this->state->hasConfirmed();
         $this->state = new OrderStateConfirmed($this->order);
     }
 
@@ -40,7 +40,7 @@ class StateSwitcher
      */
     public function isDelivered()
     {
-        $this->state->isDelivered();
+        $this->state->hasDelivered();
         $this->state = new OrderStateDelivered($this->order);
     }
 
@@ -49,7 +49,7 @@ class StateSwitcher
      */
     public function isReleaseReady()
     {
-        $this->state->isReleaseReady();
+        $this->state->hasReleaseReady();
         $this->state = new OrderStateReleaseReady($this->order);
     }
 
@@ -58,7 +58,7 @@ class StateSwitcher
      */
     public function isCompleted()
     {
-        $this->state->isCompleted();
+        $this->state->hasCompleted();
         $this->state = new OrderState($this->order);
     }
 
@@ -67,7 +67,7 @@ class StateSwitcher
      */
     public function isChanged()
     {
-        $this->state->isChanged();
+        $this->state->hasChanged();
         $this->state = new OrderStateChanged($this->order);
     }
 
@@ -77,7 +77,7 @@ class StateSwitcher
      */
     public function isReturned()
     {
-        $this->state->isReturned();
+        $this->state->hasReturned();
         $this->state = new OrderStateReturned($this->order);
     }
 
@@ -86,7 +86,7 @@ class StateSwitcher
      */
     public function isCanceledByClient()
     {
-        $this->state->isCanceledByClient();
+        $this->state->hasCanceledByClient();
         $this->state = new OrderState($this->order);
     }
 
@@ -95,7 +95,7 @@ class StateSwitcher
      */
     public function isItemExpired()
     {
-        $this->state->isItemExpired();
+        $this->state->hasItemExpired();
         $this->state = new OrderStateItemExpired($this->order);
     }
 
@@ -104,7 +104,7 @@ class StateSwitcher
      */
     public function isCanceledByTechnicalReason()
     {
-        $this->state->isCanceledByTechnicalReason();
+        $this->state->hasCanceledByTechnicalReason();
         $this->state = new OrderState($this->order);
     }
 }

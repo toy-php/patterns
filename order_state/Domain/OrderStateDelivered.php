@@ -8,7 +8,7 @@ class OrderStateDelivered extends OrderState
     /**
      * «Заказ подготовлен к выдаче» – можно приходить и забирать заказ из магазина или пункта интернет магазина.
      */
-    public function isReleaseReady()
+    public function hasReleaseReady()
     {
         $this->order->setState(OrderStates::STATE_RELEASE_READY);
     }
@@ -16,7 +16,7 @@ class OrderStateDelivered extends OrderState
     /**
      * «Заказ отменен клиентом» – мы получили запрос от Вас и отменили заказ.
      */
-    public function isCanceledByClient()
+    public function hasCanceledByClient()
     {
         $this->order->setState(OrderStates::STATE_CANCELED_BY_CLIENT);
     }
@@ -24,7 +24,7 @@ class OrderStateDelivered extends OrderState
     /**
      * «Заказ отменен по техническим причинам» – случилась серьезная техническая проблема.
      */
-    public function isCanceledByTechnicalReason()
+    public function hasCanceledByTechnicalReason()
     {
         $this->order->setState(OrderStates::STATE_CANCELED_BY_TECHNICAL_REASON);
     }
