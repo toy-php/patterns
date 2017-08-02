@@ -31,7 +31,7 @@ class AccessControl
     public function isAccess(string $action, ResourceInterface $resource, UserInterface $user): bool
     {
         $resourceClass = get_class($resource);
-        if (isset($this->rules[$resourceClass]) and $this->rules[$resourceClass][$action]) {
+        if (isset($this->rules[$resourceClass]) and isset($this->rules[$resourceClass][$action])) {
             return $this->rules[$resourceClass][$action]($resource, $user);
         }
         return false;
